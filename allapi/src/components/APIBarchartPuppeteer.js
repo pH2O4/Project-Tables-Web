@@ -15,11 +15,17 @@ const myDatasTrated = () => {
                 const elementsTHEADBarchart = THEADBarchart[indexTHEAD].textContent
                 console.log(elementsTHEADBarchart, indexTHEAD)
                 THEADBarchartArray.push(elementsTHEADBarchart)
-                console.log(THEADBarchart)
+                console.log( THEADBarchartArray)
             }
 
             const TBODYBarchart = await document.querySelectorAll("tr")
-
+            let TBODYBarchartArray = []
+            for (let indexBODY = 0; indexBODY < TBODYBarchart.length; indexBODY++) {
+                const elementsBODYBarchart = THEADBarchart[indexBODY].textContent
+                console.log(elementsBODYBarchart, indexBODY)
+                TBODYBarchartArray.push(elementsBODYBarchart)
+                console.log(TBODYBarchartArray)
+            }
             return THEADBarchart, TBODYBarchart
         })
 
