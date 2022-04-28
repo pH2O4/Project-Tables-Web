@@ -21,8 +21,8 @@ const myDatasTrated = () => {
             for (let indexBODY = 0; indexBODY < TBODYBarchart.length; indexBODY++) {
                 const elementsBODYBarchart = TBODYBarchart[indexBODY].textContent
                 console.log(elementsBODYBarchart, indexBODY)
-                const elementsBODYBarchartEmpty = elementsBODYBarchart.
                 TBODYBarchartArray.push(elementsBODYBarchart)
+                const elementsBODYBarchartEmpty = elementsBODYBarchart.replace(/\n/g, "")
                 console.log(TBODYBarchartArray)
             }
             return THEADBarchart, TBODYBarchart
