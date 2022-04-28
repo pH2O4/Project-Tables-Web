@@ -13,9 +13,7 @@ const myDatasTrated = () => {
             let THEADBarchartArray = []
             for (let indexTHEAD = 0; indexTHEAD < THEADBarchart.length; indexTHEAD++) {
                 const elementsTHEADBarchart = THEADBarchart[indexTHEAD].textContent
-                console.log(elementsTHEADBarchart, indexTHEAD)
                 THEADBarchartArray.push(elementsTHEADBarchart)
-                console.log( THEADBarchartArray)
             }
 
             const TBODYBarchart = await document.querySelectorAll("tr")
@@ -23,6 +21,7 @@ const myDatasTrated = () => {
             for (let indexBODY = 0; indexBODY < TBODYBarchart.length; indexBODY++) {
                 const elementsBODYBarchart = TBODYBarchart[indexBODY].textContent
                 console.log(elementsBODYBarchart, indexBODY)
+                const elementsBODYBarchartEmpty = elementsBODYBarchart.
                 TBODYBarchartArray.push(elementsBODYBarchart)
                 console.log(TBODYBarchartArray)
             }
