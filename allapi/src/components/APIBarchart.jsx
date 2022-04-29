@@ -7,12 +7,12 @@ class Barchart extends Component {
   }
 
   async  componentDidMount() {
+    const response = await Axios.get('http://localhost:8080/GettingDatas')
 
+    console.log(response)
+    this.setState({ tables: response.data })
   }
     render(){
-      window.onload(
-        
-      )
         return(
             <div>
               <h1>1 - </h1>
