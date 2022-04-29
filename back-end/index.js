@@ -19,7 +19,7 @@ app.get("/GettingDatas", async (req, res) => {
     const page = await browser.newPage();
     await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices');
 
-    page.evaluate(async () => {
+    const GetingDatas = page.evaluate(async (browser) => {
         /*  const THEADBarchart = await document.querySelectorAll("th")
           let THEADBarchartArray = []
           for (let indexTHEAD = 0; indexTHEAD < THEADBarchart.length; indexTHEAD++) {
@@ -37,9 +37,9 @@ app.get("/GettingDatas", async (req, res) => {
             TBODYBarchartArray.push(elementsBODYBarchartSplitingMore)
 
         }
-        res.send(TBODYBarchartArray)
+        return(TBODYBarchartArray)
     })
-
+    res.send(GetingDatas)
     await browser.close()
 
 });
