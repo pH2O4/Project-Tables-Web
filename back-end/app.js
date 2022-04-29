@@ -1,5 +1,15 @@
+const express = require("express");
+const Puppeteer = require('puppeteer');
+const cors = require('cors')
+const app = express();
 
-const { type } = require('express/lib/response');
+app.use(cors())
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(morgan('dev'));
+
+app.get("/", async (req, res) => {
+    
 const Puppeteer = require('puppeteer');
 
 const myDatasTrated = () => {
@@ -9,7 +19,7 @@ const myDatasTrated = () => {
         const page = await browser.newPage();
         await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices');
 
-        const myDatasTrated = page.evaluate(async () => {
+        const GetingDatas = page.evaluate(async () => {
             /*  const THEADBarchart = await document.querySelectorAll("th")
               let THEADBarchartArray = []
               for (let indexTHEAD = 0; indexTHEAD < THEADBarchart.length; indexTHEAD++) {
@@ -22,19 +32,24 @@ const myDatasTrated = () => {
             for (let indexBODY = 0; indexBODY < TBODYBarchart.length; indexBODY++) {
                 const elementsBODYBarchart = TBODYBarchart[indexBODY].textContent
                 const elementsBODYBarchartClean = elementsBODYBarchart.replace(/(\r\n|\n|\r)/gm, " ")
-               const elementsBODYBarchartSpliting = elementsBODYBarchartClean.replace(/\s{2,}/g, ' ')
-               const elementsBODYBarchartSplitingMore = elementsBODYBarchartSpliting.split(" ")
-                TBODYBarchartArray.push(elementsBODYBarchartSpliting)
-                console.log(TBODYBarchartArray[0])
+                const elementsBODYBarchartSpliting = elementsBODYBarchartClean.replace(/\s{2,}/g, ' ')
+                const elementsBODYBarchartSplitingMore = elementsBODYBarchartSpliting.split(" ")
+                TBODYBarchartArray.push(elementsBODYBarchartSplitingMore)
 
             }
-            return TBODYBarchart
+         res.json(TBODYBarchartArray)
         })
 
-        return myDatasTrated
-
-        //  await browser.close()
+        await browser.close()
+     
     })()
 }
 
 myDatasTrated()
+    res.json({message: 'ok'});
+});
+
+const PORT = 8080;
+app.listen(PORT, () => {
+    console.log(`Running in http://localhost:${PORT}`);
+})

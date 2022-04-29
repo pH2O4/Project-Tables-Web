@@ -1,6 +1,5 @@
 import {Component, React} from "react";
 
-
 class Barchart extends Component {
 
   state = {
