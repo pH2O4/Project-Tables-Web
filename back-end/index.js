@@ -16,7 +16,7 @@ app.get('/', function (req, res) {
 app.get("/GettingDatas", async (req, res) => {
 
 
-    const browser = await Puppeteer.launch({ headless: false });
+    const browser = await Puppeteer.launch({ headless: false});
     const page = await browser.newPage();
     await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices');
 
