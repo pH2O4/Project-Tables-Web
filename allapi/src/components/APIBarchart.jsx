@@ -12,7 +12,7 @@ class Barchart extends Component {
     this.setState({ tables: response.data })
   }
   render() {
-    const ArrayTableBarchart = this.state.tables
+    let ArrayTableBarchart = this.state.tables
     console.log(ArrayTableBarchart)
     return (
       <div className="BachartComponent">
@@ -25,18 +25,7 @@ class Barchart extends Component {
                   <tr key={row}>
                     {
                       row.map(coluns => (
-                        <td key={coluns[0]}>{coluns}</td>
-                      ))
-                    }
-                  </tr>
-                ))
-              }
-              {
-                ArrayTableBarchart.map(row => (
-                  <tr key={row}>
-                    {
-                      row.map(coluns => (
-                        <td key={coluns}>{coluns}</td>
+                        <td >{coluns}</td>
                       ))
                     }
                   </tr>
