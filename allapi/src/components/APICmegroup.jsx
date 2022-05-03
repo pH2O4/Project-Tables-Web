@@ -6,10 +6,7 @@ class Cmegroup extends Component {
 
 
     render() {
-        window.onload = async () => { 
-       // const response = await Axios.get('http://localhost:8080/GettingDatasBarchart')
-       //const ArrayTableBarchart = response.data
-}
+    
 
 
         return (

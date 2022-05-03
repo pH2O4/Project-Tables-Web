@@ -6,7 +6,7 @@ class Barchart extends Component {
 
   render() {
    
-    window.onload = async () => {
+    const FirstComponent = async () => {
       const response = await Axios.get('http://localhost:8080/GettingDatasBarchart')
       const ArrayTableBarchart = response.data
       const firstrow = async () => {
@@ -299,6 +299,7 @@ class Barchart extends Component {
       secondrow()
       firstrow()
     }
+    window.addEventListener("load", FirstComponent)
     return (
       <div className="BachartComponent">
         <div className="BarchartTable">
