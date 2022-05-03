@@ -80,7 +80,7 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
     })
 
     res.send(GetingDatas)
-    // await browser.close()
+     await browser.close()
 
 });
 

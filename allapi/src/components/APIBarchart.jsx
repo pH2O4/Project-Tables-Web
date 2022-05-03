@@ -14,14 +14,14 @@ class Barchart extends Component {
           let element0 = ArrayTableBarchart[0]
           const table0 = await document.getElementById("0")
           table0.insertAdjacentHTML('beforeend', `
-        <td>${element0[index0]}</td>
+        <td><b>${element0[index0]}</b></td>
         `)
         }
         for (let index0C = 11; index0C < 12; index0C++) {
           let element0C = ArrayTableBarchart[0]
           const table0 = await document.getElementById("0")
           table0.insertAdjacentHTML('beforeend', `
-        <td>${element0C[index0C]}</td>
+        <td><b>${element0C[index0C]}</b></td>
         `)
         }
       }
