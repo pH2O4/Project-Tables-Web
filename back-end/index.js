@@ -13,10 +13,10 @@ app.get('/', function (req, res) {
     res.send('Hello World')
 })
 
-app.get("/GettingDatas", async (req, res) => {
+app.get("/GettingDatasBarchart", async (req, res) => {
 
 
-    const browser = await Puppeteer.launch({ headless: false});
+    const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices');
 
@@ -32,12 +32,55 @@ app.get("/GettingDatas", async (req, res) => {
             TBODYBarchartArray.push(elementsBODYBarchartSplitingMore)
         }
         const JsonTBODYBarchartArray = JSON.stringify(TBODYBarchartArray)
-        return(JsonTBODYBarchartArray)
+        return (JsonTBODYBarchartArray)
 
     })
 
     res.send(GetingDatas)
     await browser.close()
+
+});
+
+app.get("/GettingDatasCmegroup", async (req, res) => {
+    const browser = await Puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html');
+
+    const GetingDatas = await page.evaluate(async () => {
+
+        const TBODYCmegroup = await document.querySelectorAll("tr")
+        let TBODYCmegroupArray = []
+        for (let indexTD = 0; indexTD < TBODYCmegroup.length; indexTD++) {
+            const GetingTDSBYArray = await TBODYCmegroup[indexTD]
+            const GetingTDSBYArrayContinue = await GetingTDSBYArray.querySelectorAll("td")
+
+            const ForInside = ( GetingTDSBYArrayContinue) => {
+                let ArrayForFluxe = []
+                for (let index = 0; index < GetingTDSBYArrayContinue.length; index++) {
+                    const elementFROMGetingTDSBYArrayContinue = GetingTDSBYArrayContinue[index].textContent
+                    ArrayForFluxe.push(elementFROMGetingTDSBYArrayContinue)
+
+                }
+                return (ArrayForFluxe)
+            }
+            TBODYCmegroupArray.push(ForInside(GetingTDSBYArrayContinue))
+            console.log(GetingTDSBYArrayContinue)
+        }
+        /*   const TBODYCmegroupFirst = await document.querySelectorAll("tr")[1]
+           const TBODYCmegroupFirstGeting = await TBODYCmegroupFirst.querySelectorAll("td")
+           
+           for (let indexBODY = 0; indexBODY < TBODYCmegroup.length; indexBODY++) {
+               const elementsBODYCmegroup = TBODYCmegroup[indexBODY].textContent
+               const elementsBODYCmegroupClean = elementsBODYCmegroup.replace(/'/g, ",")
+               TBODYCmegroupArray.push(elementsBODYCmegroup)
+           }*/
+        console.log(TBODYCmegroupArray)
+        return (TBODYCmegroupArray)
+
+    })
+
+    res.send(GetingDatas)
+    // await browser.close()
 
 });
 

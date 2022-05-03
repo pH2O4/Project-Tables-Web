@@ -3,17 +3,11 @@ import { Table } from 'react-bootstrap'
 import Axios from 'axios'
 class Barchart extends Component {
 
-  /* state = {
-     tables: [],
-   }
- 
-   async componentDidMount() {
-     const response = await Axios.get('http://localhost:8080/GettingDatas')
-     this.setState({ tables: response.data })
-   }*/
+
   render() {
+   
     window.onload = async () => {
-      const response = await Axios.get('http://localhost:8080/GettingDatas')
+      const response = await Axios.get('http://localhost:8080/GettingDatasBarchart')
       const ArrayTableBarchart = response.data
       const firstrow = async () => {
         for (let index0 = 0; index0 < 10; index0++) {
@@ -305,8 +299,6 @@ class Barchart extends Component {
       secondrow()
       firstrow()
     }
-
-
     return (
       <div className="BachartComponent">
         <div className="BarchartTable">
