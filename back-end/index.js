@@ -18,7 +18,7 @@ app.get("/GettingDatasBarchart", async (req, res) => {
 
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices');
+    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices' , { waitUntil: 'load' });
 
     const GetingDatas = await page.evaluate(async () => {
 
@@ -41,14 +41,40 @@ app.get("/GettingDatasBarchart", async (req, res) => {
 
 });
 
-app.get("/GettingDatasCmegroup", async (req, res) => {
+app.get("/GettingDatasB3", async (req, res) => {
+
+
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html');
+    await page.goto('https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/derivativos/ajustes-do-pregao/' , { waitUntil: 'load' });
 
     const GetingDatas = await page.evaluate(async () => {
 
-        const TBODYCmegroup = await document.querySelectorAll("tr")
+        const TBODYB3 = await document.querySelectorAll("tr")
+        let TBODYB3Array = []
+        console.log()
+        for (let indexB3 = 0; indexB3 < 18; indexB3++) {
+            const elementB3 =   TBODYB3[indexB3];
+            TBODYB3Array.push(elementB3)
+        }
+        const JsonTBODYB3Array = JSON.stringify(TBODYB3Array)
+        return (JsonTBODYB3Array)
+
+    })
+
+    res.send(GetingDatas)
+    await browser.close()
+
+});
+
+app.get("/GettingDatasCmegroup", async (req, res) => {
+    const browser = await Puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html' , { waitUntil: 'load' });
+
+    const GetingDatas = await page.evaluate(async () => {
+
+        const TBODYCmegroup = await document.querySelectorAll("table")
         let TBODYCmegroupArray = []
         for (let indexTD = 0; indexTD < TBODYCmegroup.length; indexTD++) {
             const GetingTDSBYArray = await TBODYCmegroup[indexTD]
@@ -80,7 +106,7 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
     })
 
     res.send(GetingDatas)
-     await browser.close()
+    await browser.close()
 
 });
 
