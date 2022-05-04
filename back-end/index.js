@@ -52,7 +52,7 @@ app.get("/GettingDatasB3", async (req, res) => {
 
         const TBODYB3 = await document.querySelectorAll("tr")
         let TBODYB3Array = []
-        console.log()
+        console.log(TBODYB3 )
         for (let indexB3 = 0; indexB3 < 18; indexB3++) {
             const elementB3 =   TBODYB3[indexB3];
             TBODYB3Array.push(elementB3)
@@ -63,7 +63,7 @@ app.get("/GettingDatasB3", async (req, res) => {
     })
 
     res.send(GetingDatas)
-    await browser.close()
+   // await browser.close()
 
 });
 
