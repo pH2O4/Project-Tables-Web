@@ -47,8 +47,9 @@ app.get("/GettingDatasB3", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     await page.goto('https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/derivativos/ajustes-do-pregao/' , { waitUntil: 'load' });
-   // const TBODYB4 = await page.$$eval('table', a => a.tr);
-   // console.log(TBODYB4)
+    const TBODYB4 = await page.$('tr')
+    console.log(TBODYB4)
+
     const GetingDatas = await page.evaluate(async () => {
 
         const TBODYB3 = await document.querySelectorAll('tr')
