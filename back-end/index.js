@@ -18,7 +18,7 @@ app.get("/GettingDatasBarchart", async (req, res) => {
 
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices' , { waitUntil: 'load' });
+    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices', { waitUntil: 'load' });
 
     const GetingDatas = await page.evaluate(async () => {
 
@@ -46,17 +46,20 @@ app.get("/GettingDatasB3", async (req, res) => {
 
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/derivativos/ajustes-do-pregao/' , { waitUntil: 'load' });
-    const TBODYB4 = await page.$('tr')
-    console.log(TBODYB4)
-
+    await page.goto('https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/derivativos/ajustes-do-pregao/', { waitUntil: 'load' });
+  
     const GetingDatas = await page.evaluate(async () => {
-
+        
+        function storePosition(e) {
+            lastClickPosition = { x: e.pageX, y: e.pageY };
+            console.log(lastClickPosition);
+        }
+        document.addEventListener('click', storePosition, true);
         const TBODYB3 = await document.querySelectorAll('tr')
         let TBODYB3Array = []
         console.log(TBODYB3)
         for (let indexB3 = 0; indexB3 < 18; indexB3++) {
-            const elementB3 =   TBODYB3[indexB3];
+            const elementB3 = TBODYB3[indexB3];
             TBODYB3Array.push(elementB3)
         }
         const JsonTBODYB3Array = JSON.stringify(TBODYB3Array)
@@ -65,14 +68,14 @@ app.get("/GettingDatasB3", async (req, res) => {
     })
 
     res.send(GetingDatas)
-   // await browser.close()
+    // await browser.close()
 
 });
 
 app.get("/GettingDatasCmegroup", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html' , { waitUntil: 'load' });
+    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html', { waitUntil: 'load' });
 
     const GetingDatas = await page.evaluate(async () => {
 
@@ -82,7 +85,7 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
             const GetingTDSBYArray = await TBODYCmegroup[indexTD]
             const GetingTDSBYArrayContinue = await GetingTDSBYArray.querySelectorAll("td")
 
-            const ForInside = ( GetingTDSBYArrayContinue) => {
+            const ForInside = (GetingTDSBYArrayContinue) => {
                 let ArrayForFluxe = []
                 for (let index = 0; index < GetingTDSBYArrayContinue.length; index++) {
                     const elementFROMGetingTDSBYArrayContinue = GetingTDSBYArrayContinue[index].textContent
