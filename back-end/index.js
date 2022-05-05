@@ -54,7 +54,7 @@ app.get("/GettingDatasB3", async (req, res) => {
             lastClickPosition = { x: e.pageX, y: e.pageY };
             console.log(lastClickPosition);
         }
-        document.addEventListener('click', storePosition, true);
+        document.addEventListener('mouseover', storePosition, true);
         const TBODYB3 = await document.querySelectorAll('tr')
         let TBODYB3Array = []
         console.log(TBODYB3)
