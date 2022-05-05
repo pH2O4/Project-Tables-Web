@@ -304,9 +304,10 @@ class Barchart extends Component {
       const SecondTableCmegroup = async () => {
         const response = await Axios.get('http://localhost:8080/GettingDatasCmegroup')
         const ArrayTableCmegroup = response.data
+        console.log(ArrayTableCmegroup)
         const firstrow = async () => {
-          for (let index0 = 0; index0 < 11; index0++) {
-          const elementArrayTableCmegroup = ArrayTableCmegroup[1];
+          for (let index0 = 0; index0 <= 10; index0++) {
+          const elementArrayTableCmegroup = ArrayTableCmegroup[0];
           const table = await document.getElementById("0C")
           table.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup[index0]}</td>
@@ -314,8 +315,8 @@ class Barchart extends Component {
         }
         }
         const secondrow = async () => {
-        for (let index1 = 0; index1 < 11; index1++) {
-          const elementArrayTableCmegroup1 = ArrayTableCmegroup[2];
+        for (let index1 = 11; index1 <= 21; index1++) {
+          const elementArrayTableCmegroup1 = ArrayTableCmegroup[0];
           const table1 = await document.getElementById("2C")
           table1.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup1[index1]}</td>
@@ -323,119 +324,148 @@ class Barchart extends Component {
         }
       }
       const thirdrow = async () => {
-        for (let index2 = 0; index2 < 11; index2++) {
-          const elementArrayTableCmegroup2 = ArrayTableCmegroup[3];
+        for (let index2 = 22; index2 <= 32; index2++) {
+          const elementArrayTableCmegroup2 = ArrayTableCmegroup[0];
           const table2 = await document.getElementById("3C")
           table2.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup2[index2]}</td>
           `)
         }}
-        for (let index3 = 0; index3 < 11; index3++) {
-          const elementArrayTableCmegroup3 = ArrayTableCmegroup[4];
+        const  fourth = async () => {  
+        for (let index3 = 33; index3 <= 43; index3++) {
+          const elementArrayTableCmegroup3 = ArrayTableCmegroup[0];
           const table3 = await document.getElementById("4C")
           table3.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup3[index3]}</td>
           `)
-        }
-        for (let index4 = 0; index4 < 11; index4++) {
-          const elementArrayTableCmegroup4 = ArrayTableCmegroup[5];
+        }}
+        const fifth = async () => { 
+        for (let index4 = 44; index4 <= 54; index4++) {
+          const elementArrayTableCmegroup4 = ArrayTableCmegroup[0];
           const table4 = await document.getElementById("5C")
           table4.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup4[index4]}</td>
           `)
-        }
-        for (let index5 = 0; index5 < 11; index5++) {
-          const elementArrayTableCmegroup5 = ArrayTableCmegroup[6];
+        }}
+        const sixth = async () => { 
+        for (let index5 = 55; index5 <= 65; index5++) {
+          const elementArrayTableCmegroup5 = ArrayTableCmegroup[0];
           const table5 = await document.getElementById("6C")
           table5.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup5[index5]}</td>
           `)
-        }
-        for (let index6 = 0; index6 < 11; index6++) {
-          const elementArrayTableCmegroup6 = ArrayTableCmegroup[7];
+        }}
+        const seventh = async () => { 
+        for (let index6 = 66; index6 <= 76; index6++) {
+          const elementArrayTableCmegroup6 = ArrayTableCmegroup[0];
           const table6 = await document.getElementById("7C")
           table6.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup6[index6]}</td>
           `)
-        }
-        for (let index7 = 0; index7 < 11; index7++) {
-          const elementArrayTableCmegroup7 = ArrayTableCmegroup[8];
+        }}
+        const  eighth = async () => { 
+        for (let index7 = 77; index7 <= 87; index7++) {
+          const elementArrayTableCmegroup7 = ArrayTableCmegroup[0];
           const table7 = await document.getElementById("8C")
           table7.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup7[index7]}</td>
           `)
-        }
-        for (let index8 = 0; index8 < 11; index8++) {
-          const elementArrayTableCmegroup8 = ArrayTableCmegroup[9];
+        }}
+        const  ninth = async () =>{ 
+        for (let index8 = 88; index8 <= 98; index8++) {
+          const elementArrayTableCmegroup8 = ArrayTableCmegroup[0];
           const table8 = await document.getElementById("9C")
           table8.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup8[index8]}</td>
           `)
-        }
-        for (let index9 = 0; index9 < 11; index9++) {
-          const elementArrayTableCmegroup9 = ArrayTableCmegroup[10];
+        }}
+        const tenth = async () => { 
+        for (let index9 = 99; index9 <= 109; index9++) {
+          const elementArrayTableCmegroup9 = ArrayTableCmegroup[0];
           const table9 = await document.getElementById("10C")
           table9.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup9[index9]}</td>
           `)
-        }
-
-        for (let index11 = 0; index11 < 11; index11++) {
-          const elementArrayTableCmegroup11 = ArrayTableCmegroup[12];
-          const table11 = await document.getElementById("12C")
+        }}
+        const  eleventh = async () => { 
+        for (let index11 = 110; index11 <= 120; index11++) {
+          const elementArrayTableCmegroup11 = ArrayTableCmegroup[0];
+          const table11 = await document.getElementById("11C")
           table11.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup11[index11]}</td>
           `)
-        }
-        for (let index12 = 0; index12 < 11; index12++) {
-          const elementArrayTableCmegroup12 = ArrayTableCmegroup[13];
-          const table12 = await document.getElementById("13C")
+        }}
+        const twelfth = async () => { 
+        for (let index12 = 121; index12 <= 131; index12++) {
+          const elementArrayTableCmegroup12 = ArrayTableCmegroup[0];
+          const table12 = await document.getElementById("12C")
           table12.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup12[index12]}</td>
           `)
-        }
-        for (let index13 = 0; index13 < 11; index13++) {
-          const elementArrayTableCmegroup13 = ArrayTableCmegroup[14];
-          const table13 = await document.getElementById("14C")
+        }}
+        const  thirteenth = async () => { 
+        for (let index13 = 132; index13 <= 142; index13++) {
+          const elementArrayTableCmegroup13 = ArrayTableCmegroup[0];
+          const table13 = await document.getElementById("13C")
           table13.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup13[index13]}</td>
           `)
-        }
-        for (let index14 = 0; index14 < 11; index14++) {
-          const elementArrayTableCmegroup14 = ArrayTableCmegroup[15];
-          const table14 = await document.getElementById("15C")
+        }}
+        const fourteenth = async () => { 
+        for (let index14 = 143; index14 <= 153; index14++) {
+          const elementArrayTableCmegroup14 = ArrayTableCmegroup[0];
+          const table14 = await document.getElementById("14C")
           table14.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup14[index14]}</td>
           `)
-        }
-        for (let index15 = 0; index15 < 11; index15++) {
-          const elementArrayTableCmegroup15 = ArrayTableCmegroup[16];
-          const table15 = await document.getElementById("16C")
+        }}
+        const fifteenth = async () => {  
+        for (let index15 = 154; index15 <= 164; index15++) {
+          const elementArrayTableCmegroup15 = ArrayTableCmegroup[0];
+          const table15 = await document.getElementById("15C")
           table15.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup15[index15]}</td>
           `)
-        }
-        for (let index16 = 0; index16 < 11; index16++) {
-          const elementArrayTableCmegroup16 = ArrayTableCmegroup[17];
-          const table16 = await document.getElementById("17C")
+        }}
+        const  sixteenth = async () => { 
+        for (let index16 = 165; index16 <= 175; index16++) {
+          const elementArrayTableCmegroup16 = ArrayTableCmegroup[0];
+          const table16 = await document.getElementById("16C")
           table16.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup16[index16]}</td>
           `)
-        }
-        for (let index17 = 0; index17 < 11; index17++) {
-          const elementArrayTableCmegroup17 = ArrayTableCmegroup[18];
-          const table17 = await document.getElementById("18C")
+        }}
+        const  seventeenth = async () => { 
+        for (let index17 = 176; index17 <= 186; index17++) {
+          const elementArrayTableCmegroup17 = ArrayTableCmegroup[0];
+          const table17 = await document.getElementById("17C")
           table17.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup17[index17]}</td>
           `)
-        }
-        for (let index18 = 0; index18 < 11; index18++) {
-          const elementArrayTableCmegroup18 = ArrayTableCmegroup[19];
-          const table18 = await document.getElementById("19C")
+        }}
+        const eighteenth = async () => { 
+        for (let index18 = 187; index18 <= 197; index18++) {
+          const elementArrayTableCmegroup18 = ArrayTableCmegroup[0];
+          const table18 = await document.getElementById("18C")
           table18.insertAdjacentHTML('beforeend', `
          <td> ${elementArrayTableCmegroup18[index18]}</td>
           `)
-        }
+        }}
+        eighteenth ()
+        seventeenth()
+        sixteenth()
+        fifteenth ()
+        fourteenth()
+        thirteenth()
+        twelfth()
+        eleventh()
+        tenth()
+        ninth()
+        eighth()
+        seventh()
+        sixth()
+        fifth()
+        fourth()
         firstrow()
         secondrow()
         thirdrow()

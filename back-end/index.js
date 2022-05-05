@@ -90,7 +90,6 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
                 return (ArrayForFluxe)
             }
             TBODYCmegroupArray.push(ForInside(GetingTDSBYArrayContinue))
-            console.log(GetingTDSBYArrayContinue)
         }
         /*   const TBODYCmegroupFirst = await document.querySelectorAll("tr")[1]
            const TBODYCmegroupFirstGeting = await TBODYCmegroupFirst.querySelectorAll("td")
@@ -100,7 +99,6 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
                const elementsBODYCmegroupClean = elementsBODYCmegroup.replace(/'/g, ",")
                TBODYCmegroupArray.push(elementsBODYCmegroup)
            }*/
-        console.log(TBODYCmegroupArray)
         return (TBODYCmegroupArray)
 
     })
