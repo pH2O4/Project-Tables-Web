@@ -46,10 +46,18 @@ app.get("/GettingDatasB3", async (req, res) => {
 
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/derivativos/ajustes-do-pregao/', { waitUntil: 'load' });
-  
+    await page.goto('https://www.b3.com.br/pt_br/market-data-e-indices/servicos-de-dados/market-data/historico/derivativos/ajustes-do-pregao/', { waitUntil: 'domcontentloaded' });
+
+
+    await page.mouse.click(381, 749, { button: 'right' })
+    await page.mouse.click(437, 732, { button: 'left' })
+    await page.mouse.click(381, 749, { button: 'right' })
+    await page.mouse.click(437, 732, { button: 'left' })
+ // const screenshot =  await page.screenshot({'clip':{'x': 15, 'y': 400, 'height': 506, 'width': 1562}})
+  //  await page.mouse.click( 284, 920, {button: 'right'})
+   // await page.mouse.click( 337, 904, {button: 'left'})
     const GetingDatas = await page.evaluate(async () => {
-        
+
         function storePosition(e) {
             lastClickPosition = { x: e.pageX, y: e.pageY };
             console.log(lastClickPosition);

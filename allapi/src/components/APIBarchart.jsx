@@ -472,14 +472,15 @@ class Barchart extends Component {
       }
 
       const ThirdTableMain = async () => {
-        const response = await Axios.get('http://localhost:8080/GettingDatasBarchart')
-        const ArrayTableBarchart = response.data
-
+        const response = await Axios.get('http://www.bmfbovespa.com.br/Pregao-Online/ExecutaAcaoCarregarDados.asp?CodDado=IBOV,ticker&CA=undefined')
+        const ArrayTableB3 = response.data
+        console.log(ArrayTableB3)
       }
 
       const CallFunctionsForEachOne = async () => {
-        await firtTableBarchart()
-        await SecondTableCmegroup()
+       // await firtTableBarchart()
+      //  await SecondTableCmegroup()
+        await ThirdTableMain()
       }
       CallFunctionsForEachOne()
     }
