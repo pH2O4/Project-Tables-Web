@@ -472,7 +472,7 @@ class Barchart extends Component {
       }
 
       const ThirdTableMain = async () => {
-        const response = await Axios.get('http://www.bmfbovespa.com.br/Pregao-Online/ExecutaAcaoCarregarDados.asp?CodDado=IBOV,ticker&CA=undefined')
+        const response = await Axios.get('http://localhost:8080/GettingDatasB3')
         const ArrayTableB3 = response.data
         console.log(ArrayTableB3)
       }
