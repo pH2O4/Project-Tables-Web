@@ -46,6 +46,7 @@ app.get("/GettingDatasB3", async (req, res) => {
 
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
+    //B3 API
     await page.goto('https://www2.bmf.com.br/pages/portal/bmfbovespa/lumis/lum-ajustes-do-pregao-ptBR.asp', { waitUntil: 'domcontentloaded' });
 
 
