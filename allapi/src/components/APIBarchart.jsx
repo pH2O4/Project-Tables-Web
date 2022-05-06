@@ -603,7 +603,7 @@ class Barchart extends Component {
 <Table striped bordered hover variant="dark">
   <tbody>
     <tr>
-      <td style={a} rowSpan={5}>Mark</td>
+      <td  rowSpan={5}>Mark</td>
     </tr>
     <tr>
       <td>asdas</td>
