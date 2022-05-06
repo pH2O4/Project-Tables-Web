@@ -732,10 +732,17 @@ class Barchart extends Component {
         }
         console.log(ArrayTableB3)
       }
+
+      const fourthTable = async () => {
+        const response = await Axios.get('http://localhost:8080/GettingDatasBCBGOV')
+        const ArrayTableBCBGOV = response.data
+      }
       const CallFunctionsForEachOne = async () => {
-         await firtTableBarchart()
-          await SecondTableCmegroup()
-        await ThirdTableMain()
+        // await firtTableBarchart()
+       //   await SecondTableCmegroup()
+      //  await ThirdTableMain()
+     await fourthTable ()
+
       }
       CallFunctionsForEachOne()
     }
@@ -817,7 +824,7 @@ class Barchart extends Component {
 
         <div className="CmegroupTable">
           <h1>Cmegroup Table</h1>
-          <Table id="SecondTableCmegroup" striped bordered hover>
+          <Table id="SecondTableCmegroup" striped bordered hover variant="light">
             <tbody>
               <tr>
                 <td ><b>MONTH</b></td>
@@ -900,6 +907,10 @@ class Barchart extends Component {
               <tr id="B3TR34"></tr>
             </tbody>
           </Table>
+        </div>
+
+        <div className="bcbgovTable">
+
         </div>
       </div>
     )

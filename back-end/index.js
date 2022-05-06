@@ -132,6 +132,28 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
 
 });
 
+app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
+    const browser = await Puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+    await page.goto('https://ptax.bcb.gov.br/ptax_internet/consultaBoletim.do?method=exibeFormularioConsultaBoletim', { waitUntil: 'load' });
+
+    const GetingDatas = await page.evaluate(async () => {
+
+        const TBODYBCBGOV = await document.querySelectorAll("tr")
+        let TBODYBCBGOVArray = []
+        for (let indexBODY = 0; indexBODY < TBODYBCBGOV.length; indexBODY++) {
+       const elementsBODYBCBGOV = TBODYBCBGOV[indexBODY].textContent
+       TBODYBCBGOVArray.push(elementsBODYBCBGOV)
+        }
+        const JsonTBODYBCBGOVArray = JSON.stringify(TBODYBCBGOVArray)
+        return (JsonTBODYBCBGOVArray)
+
+    })
+
+    res.send(GetingDatas)
+   // await browser.close()
+});
+
 const PORT = 8080;
 app.listen(PORT, () => {
     console.log(`Running in http://localhost:${PORT}`);
