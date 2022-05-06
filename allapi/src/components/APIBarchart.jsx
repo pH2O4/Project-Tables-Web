@@ -474,6 +474,7 @@ class Barchart extends Component {
       const ThirdTableMain = async () => {
         const response = await Axios.get('http://localhost:8080/GettingDatasB3')
         const ArrayTableB3 = response.data
+          //FOR WITH SPAN ROW AND INTRODUCE TDS
         console.log(ArrayTableB3)
       }
 
@@ -486,7 +487,7 @@ class Barchart extends Component {
     }
 
     return (
-      <div className="BachartComponent">
+      <div className="TABLESAPIIComponent">
         <div className="BarchartTable">
           <h1>Barchart Table</h1>
           <Table id="DinamicTable" striped bordered hover variant="dark">
@@ -559,8 +560,8 @@ class Barchart extends Component {
             </tbody>
           </Table>
         </div>
-        <div className="CmegroupTable"></div>
-        <h1>Cmegroup</h1>
+        <div className="CmegroupTable">
+                  <h1>Cmegroup Table</h1>
         <Table striped bordered hover>
           <tbody id="SecondTableCmegroup">
             <tr>
@@ -596,6 +597,34 @@ class Barchart extends Component {
             <tr id="18C"></tr>
           </tbody>
         </Table>
+        </div>
+        <div className="B3Table">
+          <h1>B3 Table</h1>
+<Table striped bordered hover variant="dark">
+  <tbody>
+    <tr>
+      <td style={a} rowSpan={5}>Mark</td>
+    </tr>
+    <tr>
+      <td>asdas</td>
+      <td>asdas</td>
+    </tr>
+    <tr>
+      <td>asdas</td>
+      <td>asdas</td>
+    </tr>
+    <tr>
+      <td>asdas</td>
+      <td>asdas</td>
+    </tr>
+    <tr>
+      <td>asdas</td>
+      <td>asdas</td>
+    </tr>
+
+  </tbody>
+</Table>
+        </div>
       </div>
     )
   }

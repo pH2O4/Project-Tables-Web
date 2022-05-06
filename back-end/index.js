@@ -86,7 +86,7 @@ app.get("/GettingDatasB3", async (req, res) => {
     })
 
     res.send(GetingDatas)
-    // await browser.close()
+     await browser.close()
 
 });
 
