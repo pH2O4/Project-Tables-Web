@@ -1,0 +1,48 @@
+.TABLESAPIIComponent{
+    background-color:  #77C66E;
+    width: 100vh;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "TABLEBARCHART  TABLECMEGROUP  B3TABLE"
+}
+
+.BarchartTable{
+    grid-area: TABLEBARCHART;
+    margin: 20px;
+}
+
+#DinamicTable{
+
+    border-style:solid;
+    border-width: 4px;
+    border-color: #018749;
+    
+}
+
+.CmegroupTable{
+    grid-area: TABLECMEGROUP;
+    margin: 20px;
+}
+
+#SecondTableCmegroup{
+    border-style:solid;
+    border-width: 4px;
+    border-color: #018749;
+    
+}
+
+
+.TableB3{
+    grid-area: B3TABLE;
+    margin: 20px;
+}
+
+#B3TABLEX{
+    border-style:solid;
+    border-width: 4px;
+    border-color: #018749;
+     
+}

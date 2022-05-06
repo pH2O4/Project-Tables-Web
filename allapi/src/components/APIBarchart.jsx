@@ -1,5 +1,6 @@
 import { Component, React } from "react";
 import { Table } from 'react-bootstrap'
+import './TABLES.css'
 import Axios from 'axios'
 class Barchart extends Component {
 
@@ -732,8 +733,8 @@ class Barchart extends Component {
         console.log(ArrayTableB3)
       }
       const CallFunctionsForEachOne = async () => {
-        // await firtTableBarchart()
-        //  await SecondTableCmegroup()
+         await firtTableBarchart()
+          await SecondTableCmegroup()
         await ThirdTableMain()
       }
       CallFunctionsForEachOne()
@@ -813,10 +814,11 @@ class Barchart extends Component {
             </tbody>
           </Table>
         </div>
+
         <div className="CmegroupTable">
           <h1>Cmegroup Table</h1>
-          <Table striped bordered hover>
-            <tbody id="SecondTableCmegroup">
+          <Table id="SecondTableCmegroup" striped bordered hover>
+            <tbody>
               <tr>
                 <td ><b>MONTH</b></td>
                 <td><b>OPTIONS</b></td>
@@ -851,9 +853,10 @@ class Barchart extends Component {
             </tbody>
           </Table>
         </div>
-        <div className="B3Table">
+
+        <div className="TableB3">
           <h1>B3 Table</h1>
-          <Table striped bordered hover variant="dark">
+          <Table id="B3TABLEX" striped bordered hover variant="dark">
             <tbody id="BodyTableB3">
               <tr><td><b>MERCADORIA</b></td>  <td><b>VENCIMENTO</b></td>
               <td><b>PREÇO DE AJUSTE ANTERIOR</b></td>
