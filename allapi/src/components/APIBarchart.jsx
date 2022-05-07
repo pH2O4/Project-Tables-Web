@@ -737,6 +737,13 @@ class Barchart extends Component {
         const response = await Axios.get('http://localhost:8080/GettingDatasGettingDatasBCBGOV')
         const ArrayTableBCBGOV = response.data
         console.log(ArrayTableBCBGOV)
+        for (let index = 0; index < ArrayTableBCBGOV.length; index++) {
+          const element = ArrayTableBCBGOV;
+          const table = await document.getElementById("1GOVROW")
+          table.insertAdjacentHTML('beforeend', `
+       <td> ${element[index]} </td>
+        `)
+        }
       }
       const CallFunctionsForEachOne = async () => {
         //  await firtTableBarchart()
@@ -921,6 +928,24 @@ class Barchart extends Component {
                 <td>Compra	</td>
                 <td>Venda</td>
               </tr>
+              <tr className="1GOVROW"></tr>
+              <tr className="2GOVROW"></tr>
+              <tr className="3GOVROW"></tr>
+              <tr className="4GOVROW"></tr>
+              <tr className="5GOVROW"></tr>
+              <tr className="6GOVROW"></tr>
+              <tr className="7GOVROW"></tr>
+              <tr className="8GOVROW"></tr>
+              <tr className="9GOVROW"></tr>
+              <tr className="10GOVROW"></tr>
+              <tr className="11GOVROW"></tr>
+              <tr className="12GOVROW"></tr>
+              <tr className="14GOVROW"></tr>
+              <tr className="15GOVROW"></tr>
+              <tr className="16GOVROW"></tr>
+              <tr className="17GOVROW"></tr>
+              <tr className="18GOVROW"></tr>
+              <tr className="19GOVROW"></tr>
             </tbody>
           </Table>
         </div>
