@@ -734,8 +734,9 @@ class Barchart extends Component {
       }
 
       const fourthTable = async () => {
-        const response = await Axios.get('http://localhost:8080/GettingDatasBCBGOV')
+        const response = await Axios.get('http://localhost:8080/GettingDatasGettingDatasBCBGOV')
         const ArrayTableBCBGOV = response.data
+        console.log(ArrayTableBCBGOV)
       }
       const CallFunctionsForEachOne = async () => {
         //  await firtTableBarchart()
@@ -907,7 +908,7 @@ class Barchart extends Component {
 
         <div className="bcbgovTablefourth">
           <h1 id="fourthTableTitle">USD Cotação GOV</h1>
-          <Table id="Fourthtable" striped bordered hover variant="dark">
+          <Table id="Fourthtable" striped bordered hover variant="light">
             <tbody >
               <tr>
                 <td>Data</td>

@@ -156,13 +156,11 @@ app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
       
         }
         const JsonTBODYBCBGOVArray = JSON.stringify(TBODYBCBGOVArray)
-        console.log(TBODYBCBGOVArray)
-        console.log(TBODYBCBGOV )
         return (JsonTBODYBCBGOVArray)
 
     })
     res.send(GetingDatas)
-   // await browser.close()
+    await browser.close()
 });
 
 const PORT = 8080;
