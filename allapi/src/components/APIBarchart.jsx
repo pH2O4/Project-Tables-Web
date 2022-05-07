@@ -738,10 +738,10 @@ class Barchart extends Component {
         const ArrayTableBCBGOV = response.data
       }
       const CallFunctionsForEachOne = async () => {
-         await firtTableBarchart()
-          await SecondTableCmegroup()
-        await ThirdTableMain()
-   //  await fourthTable ()
+       //  await firtTableBarchart()
+       //   await SecondTableCmegroup()
+       // await ThirdTableMain()
+     await fourthTable ()
 
       }
       CallFunctionsForEachOne()
