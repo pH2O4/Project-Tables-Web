@@ -1,5 +1,7 @@
 .TABLESAPIIComponent{
-    background-color:  #77C66E;
+    background-color: #08AEEA;
+background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+
     width: 100vh;
     margin: 0;
     display: grid;
@@ -12,37 +14,45 @@
 .BarchartTable{
     grid-area: TABLEBARCHART;
     margin: 20px;
+    font-family: sans-serif;
 }
 
 #DinamicTable{
-
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
     border-style:solid;
     border-width: 4px;
     border-color: #018749;
-    
+    font-size: 70%;
+    font-weight:bold;
 }
 
 .CmegroupTable{
     grid-area: TABLECMEGROUP;
     margin: 20px;
+    font-family: sans-serif;
 }
 
 #SecondTableCmegroup{
     border-style:solid;
     border-width: 4px;
     border-color: #018749;
-    
+    font-size: 70%;
+    font-weight:bold;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
 
 .TableB3{
     grid-area: B3TABLE;
     margin: 20px;
+    font-family: sans-serif;
 }
 
 #B3TABLEX{
     border-style:solid;
     border-width: 4px;
     border-color: #018749;
-     
+    font-size: 70%;
+    font-weight:bold;
+   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }

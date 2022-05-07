@@ -738,10 +738,10 @@ class Barchart extends Component {
         const ArrayTableBCBGOV = response.data
       }
       const CallFunctionsForEachOne = async () => {
-        // await firtTableBarchart()
-       //   await SecondTableCmegroup()
-      //  await ThirdTableMain()
-     await fourthTable ()
+         await firtTableBarchart()
+          await SecondTableCmegroup()
+        await ThirdTableMain()
+   //  await fourthTable ()
 
       }
       CallFunctionsForEachOne()
@@ -750,7 +750,7 @@ class Barchart extends Component {
     return (
       <div className="TABLESAPIIComponent">
         <div className="BarchartTable">
-          <h1>Barchart Table</h1>
+          <h1 id="FirtTableTitle">Barchart Table</h1>
           <Table id="DinamicTable" striped bordered hover variant="dark">
             <tbody >
               <tr id="0"></tr>
@@ -814,10 +814,6 @@ class Barchart extends Component {
                 <td ></td>
                 <td id="15TD"></td>
               </tr>
-              <tr id="16">
-                <td ></td>
-                <td id="16TD"></td>
-              </tr>
             </tbody>
           </Table>
         </div>
@@ -827,17 +823,17 @@ class Barchart extends Component {
           <Table id="SecondTableCmegroup" striped bordered hover variant="light">
             <tbody>
               <tr>
-                <td ><b>MONTH</b></td>
-                <td><b>OPTIONS</b></td>
-                <td><b>CHART</b></td>
-                <td><b>LAST</b></td>
-                <td><b>CHANGE</b></td>
-                <td><b>PRIOR SETTLE</b></td>
-                <td><b>OPEN</b></td>
-                <td><b>HIGH</b></td>
-                <td><b>LOW</b></td>
-                <td><b>VOLUME</b></td>
-                <td><b>UPDATED</b></td>
+                <td ><b>Month</b></td>
+                <td><b>Options</b></td>
+                <td><b>Chart</b></td>
+                <td><b>Last</b></td>
+                <td><b>Change</b></td>
+                <td><b>Prior Settle</b></td>
+                <td><b>Open</b></td>
+                <td><b>High</b></td>
+                <td><b>Low</b></td>
+                <td><b>Volume</b></td>
+                <td><b>Updated</b></td>
               </tr>
               <tr id="0C"></tr>
               <tr id="2C"></tr>
@@ -865,11 +861,11 @@ class Barchart extends Component {
           <h1>B3 Table</h1>
           <Table id="B3TABLEX" striped bordered hover variant="dark">
             <tbody id="BodyTableB3">
-              <tr><td><b>MERCADORIA</b></td>  <td><b>VENCIMENTO</b></td>
-              <td><b>PREÇO DE AJUSTE ANTERIOR</b></td>
-              <td><b>PREÇO DE AJUSTE ATUAL	</b></td>
-              <td><b>VARIAÇÃO</b></td>
-              <td><b>VALOR DO AJUSTE POR CONTRATO (R$)</b></td></tr>
+              <tr><td><b>Mercadoria</b></td>  <td><b>Vencimento</b></td>
+              <td><b>Preço de Ajuste Anterior</b></td>
+              <td><b>Preço de Ajuste Atual	</b></td>
+              <td><b>Variação</b></td>
+              <td><b>Valor do Ajuste Por Contrato (R$)</b></td></tr>
 
               <tr id="B3TR1"></tr>
               <tr id="B3TR2"></tr>

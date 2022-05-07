@@ -1,6 +1,8 @@
 .App {
   text-align: center;
-  background-color:  #77C66E;
+  background-color: #08AEEA;
+  background-image: linear-gradient(0deg, #08AEEA 0%, #2AF598 100%);
+  
   width: 1fr;
   overflow: auto;
 
