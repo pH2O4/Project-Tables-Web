@@ -142,11 +142,22 @@ app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
         const TBODYBCBGOV = await document.querySelectorAll("tr")
         let TBODYBCBGOVArray = []
         for (let indexBODY = 0; indexBODY < TBODYBCBGOV.length; indexBODY++) {
-       const elementsBODYBCBGOV = TBODYBCBGOV[indexBODY].textContent
-       TBODYBCBGOVArray.push(elementsBODYBCBGOV)
+       const elementsBODYBCBGOV = TBODYBCBGOV[indexBODY].querySelectorAll("td")
+        const getingTDS = (elementsBODYBCBGOV) => {
+            let arrayforfluxe = []
+            for (let index = 0; index < elementsBODYBCBGOV.length; index++) {
+                const element = elementsBODYBCBGOV[index].textContent
+                arrayforfluxe.push(element)
+            }
+           return(arrayforfluxe)
+        }
+        
+       TBODYBCBGOVArray.push(getingTDS(elementsBODYBCBGOV))
+      
         }
         const JsonTBODYBCBGOVArray = JSON.stringify(TBODYBCBGOVArray)
         console.log(TBODYBCBGOVArray)
+        console.log(TBODYBCBGOV )
         return (JsonTBODYBCBGOVArray)
 
     })
