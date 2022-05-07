@@ -738,10 +738,10 @@ class Barchart extends Component {
         const ArrayTableBCBGOV = response.data
       }
       const CallFunctionsForEachOne = async () => {
-       //  await firtTableBarchart()
-       //   await SecondTableCmegroup()
-       // await ThirdTableMain()
-     await fourthTable ()
+        //  await firtTableBarchart()
+        //   await SecondTableCmegroup()
+        // await ThirdTableMain()
+        await fourthTable()
 
       }
       CallFunctionsForEachOne()
@@ -862,10 +862,10 @@ class Barchart extends Component {
           <Table id="B3TABLEX" striped bordered hover variant="dark">
             <tbody id="BodyTableB3">
               <tr><td><b>Mercadoria</b></td>  <td><b>Vencimento</b></td>
-              <td><b>Preço de Ajuste Anterior</b></td>
-              <td><b>Preço de Ajuste Atual	</b></td>
-              <td><b>Variação</b></td>
-              <td><b>Valor do Ajuste Por Contrato (R$)</b></td></tr>
+                <td><b>Preço de Ajuste Anterior</b></td>
+                <td><b>Preço de Ajuste Atual	</b></td>
+                <td><b>Variação</b></td>
+                <td><b>Valor do Ajuste Por Contrato (R$)</b></td></tr>
 
               <tr id="B3TR1"></tr>
               <tr id="B3TR2"></tr>
@@ -905,8 +905,23 @@ class Barchart extends Component {
           </Table>
         </div>
 
-        <div className="bcbgovTable">
-
+        <div className="bcbgovTablefourth">
+          <h1 id="fourthTableTitle">USD Cotação GOV</h1>
+          <Table id="Fourthtable" striped bordered hover variant="dark">
+            <tbody >
+              <tr>
+                <td>Data</td>
+                <td>tipo</td>
+                <td colSpan={2}>Cotações em Real1/</td>
+              </tr>
+              <tr>
+                <td></td>
+                <td></td>
+                <td>Compra	</td>
+                <td>Venda</td>
+              </tr>
+            </tbody>
+          </Table>
         </div>
       </div>
     )
