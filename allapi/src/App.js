@@ -1,14 +1,17 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route} from "react-router-dom";
 
-import Barchart from './components/APIBarchart'
+import Main from './components/APIALLTABLES'
 
-function App() {
-  return (
+export default props =>
+  
     <div className="App">
-      <Barchart />
+<Routes>
+    <Route exact path="/" element={<Main/>} />
+</Routes>
     </div>
-  );
-}
 
-export default App;
+
+
+
