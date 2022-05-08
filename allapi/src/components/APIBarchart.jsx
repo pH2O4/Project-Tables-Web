@@ -883,9 +883,9 @@ class Barchart extends Component {
         }
       }
       const CallFunctionsForEachOne = async () => {
-        //  await firtTableBarchart()
-        //   await SecondTableCmegroup()
-        // await ThirdTableMain()
+          await firtTableBarchart()
+           await SecondTableCmegroup()
+         await ThirdTableMain()
         await fourthTable()
 
       }
