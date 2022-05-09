@@ -18,7 +18,9 @@ app.get("/GettingDatasBarchart", async (req, res) => {
 
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices');
+    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices', { waitUntil: 'load',
+    // Remove the timeout
+    timeout: 0});
 
     const GetingDatas = await page.evaluate(async () => {
 
@@ -47,7 +49,9 @@ app.get("/GettingDatasB3", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     //B3 API
-    await page.goto('https://www2.bmf.com.br/pages/portal/bmfbovespa/lumis/lum-ajustes-do-pregao-ptBR.asp', { waitUntil: 'domcontentloaded' });
+    await page.goto('https://www2.bmf.com.br/pages/portal/bmfbovespa/lumis/lum-ajustes-do-pregao-ptBR.asp', { waitUntil: 'load',
+    // Remove the timeout
+    timeout: 0});
 
 
     //  await page.mouse.click(381, 749, { button: 'right' })
@@ -94,7 +98,9 @@ app.get("/GettingDatasB3", async (req, res) => {
 app.get("/GettingDatasCmegroup", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html');
+    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html', { waitUntil: 'load',
+    // Remove the timeout
+    timeout: 0});
 
     const GetingDatas = await page.evaluate(async () => {
 
@@ -135,7 +141,9 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
 app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://ptax.bcb.gov.br/ptax_internet/consultaBoletim.do?method=exibeFormularioConsultaBoletim', { waitUntil: 'load' });
+    await page.goto('https://ptax.bcb.gov.br/ptax_internet/consultaBoletim.do?method=exibeFormularioConsultaBoletim', { waitUntil: 'load',
+    // Remove the timeout
+    timeout: 0});
     await page.$eval( '.botao', form => form.click() );
     const GetingDatas = await page.evaluate(async () => {
 
