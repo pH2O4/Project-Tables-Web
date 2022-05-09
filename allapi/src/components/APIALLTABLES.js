@@ -894,10 +894,11 @@ class Main extends Component {
     return (
       <div className="App">
         <div className="TABLESAPIIComponent">
+         
+          <div className="BarchartTable">
           <div>
           <img src={LOGO}></img>
           </div>
-          <div className="BarchartTable">
             <h1 id="FirtTableTitle">Cotton</h1>
             <Table id="DinamicTable" striped bordered hover variant="dark">
               <tbody >
@@ -964,6 +965,7 @@ class Main extends Component {
                 </tr>
               </tbody>
             </Table>
+          
           </div>
 
           <div className="CmegroupTable">
