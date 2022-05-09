@@ -896,7 +896,7 @@ class Main extends Component {
         <div className="TABLESAPIIComponent">
          
           <div className="BarchartTable">
-          <div>
+          <div className="logo">
           <img src={LOGO}></img>
           </div>
             <h1 id="FirtTableTitle">Cotton</h1>

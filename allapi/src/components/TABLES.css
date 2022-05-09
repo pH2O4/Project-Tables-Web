@@ -11,8 +11,15 @@ background-image: linear-gradient(0deg, #5fc4e8 0%, #abebce 100%);
     "TABLEBARCHART  TABLECMEGROUP  B3TABLE GOVTABLE"
 }
 
+.logo{
+    margin-bottom: 30px;
+}
+
+
 h1{
-    font-size: 20px;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: bold;
 }
 .BarchartTable{
     grid-area: TABLEBARCHART;
