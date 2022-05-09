@@ -18,7 +18,7 @@ app.get("/GettingDatasBarchart", async (req, res) => {
 
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices', { waitUntil: 'load' });
+    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices');
 
     const GetingDatas = await page.evaluate(async () => {
 
@@ -94,7 +94,7 @@ app.get("/GettingDatasB3", async (req, res) => {
 app.get("/GettingDatasCmegroup", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html', { waitUntil: 'load' });
+    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html');
 
     const GetingDatas = await page.evaluate(async () => {
 
