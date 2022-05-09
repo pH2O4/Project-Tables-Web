@@ -884,13 +884,14 @@ const Main = () => {
       await ThirdTableMain()
       await fourthTable()
     }
-
-   window.onload = CallFunctionsForEachOne()
+    window.onload = CallFunctionsForEachOne()
+ 
 
 
 
 
     return (
+      <div className="App">
       <div className="TABLESAPIIComponent">
         <div className="BarchartTable">
           <h1 id="FirtTableTitle">Barchart Table</h1>
@@ -1084,6 +1085,7 @@ const Main = () => {
             </tbody>
           </Table>
         </div>
+      </div>
       </div>
     )
   
