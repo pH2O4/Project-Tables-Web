@@ -1,6 +1,7 @@
 import { Component, React } from "react";
 import { Table } from 'react-bootstrap'
 import './TABLES.css'
+import LOGO from './LogoDec.png'
 import Axios from 'axios'
 
 class Main extends Component {
@@ -893,8 +894,11 @@ class Main extends Component {
     return (
       <div className="App">
         <div className="TABLESAPIIComponent">
+          <div>
+          <img src={LOGO}></img>
+          </div>
           <div className="BarchartTable">
-            <h1 id="FirtTableTitle">Barchart Table</h1>
+            <h1 id="FirtTableTitle">Cotton</h1>
             <Table id="DinamicTable" striped bordered hover variant="dark">
               <tbody >
                 <tr id="0"></tr>
