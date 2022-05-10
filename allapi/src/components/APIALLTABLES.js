@@ -867,7 +867,7 @@ class Main extends Component {
      // await firtTableBarchart()
     //  await SecondTableCmegroup()
      // await ThirdTableMain()
-      await fourthTable()
+      //await fourthTable()
     }
     window.onload = CallFunctionsForEachOne()
 
@@ -879,7 +879,7 @@ class Main extends Component {
          
           <div className="BarchartTable">
           <div className="logo">
-          <img src={LOGO}></img>
+          <img src={LOGO} height={100}></img>
           </div>
             <h1 id="FirtTableTitle">Cotton</h1>
             <Table id="DinamicTable" striped bordered hover variant="dark">
