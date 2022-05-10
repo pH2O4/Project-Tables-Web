@@ -141,13 +141,14 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
 app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://ptax.bcb.gov.br/ptax_internet/consultaBoletim.do?method=exibeFormularioConsultaBoletim', { waitUntil: 'load',
+    await page.goto('https://ptax.bcb.gov.br/ptax_internet/consultaBoletim.do?method=exibeFormularioConsultaBoletim', { waitUntil: 'domcontentloaded',
     // Remove the timeout
     timeout: 0});
     await page.$eval( '.botao', form => form.click() );
     const GetingDatas = await page.evaluate(async () => {
 
         const TBODYBCBGOV = await document.querySelectorAll("tr")
+        console.log( TBODYBCBGOV )
         let TBODYBCBGOVArray = []
         for (let indexBODY = 0; indexBODY < TBODYBCBGOV.length; indexBODY++) {
        const elementsBODYBCBGOV = TBODYBCBGOV[indexBODY].querySelectorAll("td")
@@ -164,11 +165,12 @@ app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
       
         }
         const JsonTBODYBCBGOVArray = JSON.stringify(TBODYBCBGOVArray)
+        console.log(JsonTBODYBCBGOVArray)
         return (JsonTBODYBCBGOVArray)
 
     })
     res.send(GetingDatas)
-    await browser.close()
+  //  await browser.close()
 });
 
 const PORT = 8080;

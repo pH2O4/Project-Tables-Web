@@ -739,7 +739,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[2].length; index++) {
         const element = ArrayTableBCBGOV[2];
         const table = await document.getElementById("1GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -747,7 +746,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[3].length; index++) {
         const element = ArrayTableBCBGOV[3];
         const table = await document.getElementById("3GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -755,7 +753,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[4].length; index++) {
         const element = ArrayTableBCBGOV[4];
         const table = await document.getElementById("4GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -763,7 +760,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[5].length; index++) {
         const element = ArrayTableBCBGOV[5];
         const table = await document.getElementById("5GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -771,7 +767,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[6].length; index++) {
         const element = ArrayTableBCBGOV[6];
         const table = await document.getElementById("6GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -779,7 +774,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[7].length; index++) {
         const element = ArrayTableBCBGOV[7];
         const table = await document.getElementById("7GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -787,7 +781,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[8].length; index++) {
         const element = ArrayTableBCBGOV[8];
         const table = await document.getElementById("8GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -795,7 +788,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[9].length; index++) {
         const element = ArrayTableBCBGOV[9];
         const table = await document.getElementById("9GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -803,7 +795,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[10].length; index++) {
         const element = ArrayTableBCBGOV[10];
         const table = await document.getElementById("10GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -811,7 +802,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[11].length; index++) {
         const element = ArrayTableBCBGOV[11];
         const table = await document.getElementById("11GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -819,7 +809,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[12].length; index++) {
         const element = ArrayTableBCBGOV[12];
         const table = await document.getElementById("12GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -827,7 +816,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[13].length; index++) {
         const element = ArrayTableBCBGOV[13];
         const table = await document.getElementById("13GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -835,7 +823,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[14].length; index++) {
         const element = ArrayTableBCBGOV[14];
         const table = await document.getElementById("14GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -843,7 +830,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[15].length; index++) {
         const element = ArrayTableBCBGOV[15];
         const table = await document.getElementById("15GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -851,7 +837,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[16].length; index++) {
         const element = ArrayTableBCBGOV[16];
         const table = await document.getElementById("16GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -859,7 +844,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[17].length; index++) {
         const element = ArrayTableBCBGOV[17];
         const table = await document.getElementById("17GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -867,7 +851,6 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[18].length; index++) {
         const element = ArrayTableBCBGOV[18];
         const table = await document.getElementById("18GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
@@ -875,16 +858,15 @@ class Main extends Component {
       for (let index = 0; index < ArrayTableBCBGOV[19].length; index++) {
         const element = ArrayTableBCBGOV[19];
         const table = await document.getElementById("19GOVROW")
-        console.log(typeof element)
         table.insertAdjacentHTML('beforeend', `
        <td> ${element[index]} </td>
         `)
       }
     }
     const CallFunctionsForEachOne = async () => {
-      await firtTableBarchart()
-      await SecondTableCmegroup()
-      await ThirdTableMain()
+     // await firtTableBarchart()
+    //  await SecondTableCmegroup()
+     // await ThirdTableMain()
       await fourthTable()
     }
     window.onload = CallFunctionsForEachOne()
