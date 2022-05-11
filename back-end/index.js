@@ -70,7 +70,7 @@ app.get("/GettingDatasB3", async (req, res) => {
             document.addEventListener('mouseover', storePosition, true);*/
         const TBODYB3 = await document.querySelectorAll('tr')
         let TBODYB3Array = []
-        for (let indexB3 = 0; indexB3 < 35; indexB3++) {
+        for (let indexB3 = 0; indexB3 < TBODYB3.length; indexB3++) {
             const elementB3TR = await TBODYB3[indexB3]
             const getingTDSB3 = await elementB3TR.querySelectorAll("td")
             const GetingTextContentTDsB3 = (getingTDSB3) => {
@@ -170,7 +170,7 @@ app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
 
     })
     res.send(GetingDatas)
-  //  await browser.close()
+    await browser.close()
 });
 
 const PORT = 8080;
