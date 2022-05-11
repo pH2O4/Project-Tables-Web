@@ -304,7 +304,6 @@ class Main extends Component {
     const SecondTableCmegroup = async () => {
       const response = await Axios.get('http://localhost:8080/GettingDatasCmegroup')
       const ArrayTableCmegroup = response.data
-      console.log(ArrayTableCmegroup)
       const firstrow = async () => {
         for (let index0 = 0; index0 <= 10; index0++) {
           const elementArrayTableCmegroup = ArrayTableCmegroup[0];
@@ -490,7 +489,6 @@ class Main extends Component {
     const ThirdTableMain = async () => {
       const response = await Axios.get('http://localhost:8080/GettingDatasB3')
       const ArrayTableB3 = response.data
-      console.log(ArrayTableB3)
       //FOR WITH SPAN ROW AND INTRODUCE TDS
       for (let index = 0; index < ArrayTableB3[28].length; index++) {
         const element = ArrayTableB3[28];
@@ -531,7 +529,7 @@ class Main extends Component {
         const element = ArrayTableB3[33];
         const table = await document.getElementById("B3TR6")
         table.insertAdjacentHTML('beforeend', `
-       <td> <b>${element[index]} </b></td>
+       <td> ${element[index]} </td>
         `)
       }
       for (let index = 0; index < ArrayTableB3[34].length; index++) {
@@ -559,7 +557,7 @@ class Main extends Component {
         const element = ArrayTableB3[37];
         const table = await document.getElementById("B3TR10")
         table.insertAdjacentHTML('beforeend', `
-       <td> <b> ${element[index]} </b></td>
+       <td> ${element[index]} </td>
         `)
       }
        for (let index = 0; index < ArrayTableB3[50].length; index++) {
@@ -601,7 +599,7 @@ class Main extends Component {
         const element = ArrayTableB3[55];
         const table = await document.getElementById("B3TR16")
         table.insertAdjacentHTML('beforeend', `
-       <td><b> ${element[index]} </b></td>
+       <td> ${element[index]} </td>
         `)
       }
       for (let index = 0; index < ArrayTableB3[56].length; index++) {
@@ -622,7 +620,7 @@ class Main extends Component {
         const element = ArrayTableB3[228];
         const table = await document.getElementById("B3TR19")
         table.insertAdjacentHTML('beforeend', `
-       <td> ${element[index]} </td>
+       <td> <b> ${element[index]} </b></td>
         `)
       }
       for (let index = 0; index < ArrayTableB3[229].length; index++) {
@@ -636,7 +634,7 @@ class Main extends Component {
         const element = ArrayTableB3[230];
         const table = await document.getElementById("B3TR21")
         table.insertAdjacentHTML('beforeend', `
-       <td><b> ${element[index]}</b> </td>
+       <td> ${element[index]} </td>
         `)
       }
       for (let index = 0; index < ArrayTableB3[231].length; index++) {
@@ -671,7 +669,7 @@ class Main extends Component {
         const element = ArrayTableB3[235];
         const table = await document.getElementById("B3TR26")
         table.insertAdjacentHTML('beforeend', `
-       <td><b> ${element[index]}</b> </td>
+       <td> ${element[index]} </td>
         `)
       }
       for (let index = 0; index < ArrayTableB3[236].length; index++) {
@@ -685,7 +683,7 @@ class Main extends Component {
         const element = ArrayTableB3[237];
         const table = await document.getElementById("B3TR28")
         table.insertAdjacentHTML('beforeend', `
-       <td> <b>${element[index]}</b> </td>
+       <td> ${element[index]} </td>
         `)
       }
       for (let index = 0; index < ArrayTableB3[238].length; index++) {
@@ -763,7 +761,7 @@ class Main extends Component {
 
     const fourthTable = async () => {
       const response = await Axios.get('http://localhost:8080/GettingDatasGettingDatasBCBGOV')
-      const ArrayTableBCBGOV = response.data
+      const ArrayTableBCBGOV = await response.data
       console.log(ArrayTableBCBGOV)
       for (let index = 0; index < ArrayTableBCBGOV[19].length; index++) {
         const element = ArrayTableBCBGOV[19];
@@ -901,7 +899,7 @@ class Main extends Component {
   //  window.setTimeout('funcao()', intervalo_em_milisegundos);
   setInterval(function() {
     window.location.reload(1);
-  }, 60000); // 1 minutos
+  }, 900000 ); // 15 minutos
 
   window.onload = CallFunctionsForEachOne()
     return (
@@ -1084,15 +1082,15 @@ class Main extends Component {
             <Table id="Fourthtable" striped bordered hover variant="light">
               <tbody >
                 <tr>
-                  <td>Data</td>
-                  <td>tipo</td>
-                  <td colSpan={2}>Cotações em Real1/</td>
+                  <td> <b>Data</b></td>
+                  <td> <b>tipo</b></td>
+                  <td colSpan={2}><b>Cotações em Real1/</b> </td>
                 </tr>
                 <tr>
                   <td></td>
                   <td></td>
-                  <td>Compra	</td>
-                  <td>Venda</td>
+                  <td> <b>Compra</b>	</td>
+                  <td> <b>Venda</b></td>
                 </tr>
                 <tr id="1GOVROW"></tr>
                 <tr id="2GOVROW"></tr>
