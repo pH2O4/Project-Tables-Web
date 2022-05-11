@@ -899,9 +899,11 @@ class Main extends Component {
       await fourthTable()
     }
   //  window.setTimeout('funcao()', intervalo_em_milisegundos);
-    window.setInterval(CallFunctionsForEachOne(), 30000);
+  setInterval(function() {
+    window.location.reload(1);
+  }, 60000); // 1 minutos
 
-
+  window.onload = CallFunctionsForEachOne()
     return (
       <div className="App">
         <div className="TABLESAPIIComponent">
