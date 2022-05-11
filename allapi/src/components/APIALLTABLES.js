@@ -763,6 +763,13 @@ class Main extends Component {
       const response = await Axios.get('http://localhost:8080/GettingDatasGettingDatasBCBGOV')
       const ArrayTableBCBGOV = await response.data
       console.log(ArrayTableBCBGOV)
+      for (let index = 0; index < ArrayTableBCBGOV[20].length; index++) {
+        const element = ArrayTableBCBGOV[20];
+        const table = await document.getElementById("0GOVROW")
+        table.insertAdjacentHTML('beforeend', `
+       <td> ${element[index]} </td>
+        `)
+      }
       for (let index = 0; index < ArrayTableBCBGOV[19].length; index++) {
         const element = ArrayTableBCBGOV[19];
         const table = await document.getElementById("1GOVROW")
@@ -891,15 +898,15 @@ class Main extends Component {
       }
     }
     const CallFunctionsForEachOne = async () => {
-      await firtTableBarchart()
-      await SecondTableCmegroup()
-      await ThirdTableMain()
+   //   await firtTableBarchart()
+    //  await SecondTableCmegroup()
+     // await ThirdTableMain()
       await fourthTable()
     }
   //  window.setTimeout('funcao()', intervalo_em_milisegundos);
   setInterval(function() {
     window.location.reload(1);
-  }, 900000 ); // 15 minutos
+  }, 10000 ); // 15 minutos
 
   window.onload = CallFunctionsForEachOne()
     return (
@@ -1092,6 +1099,7 @@ class Main extends Component {
                   <td> <b>Compra</b>	</td>
                   <td> <b>Venda</b></td>
                 </tr>
+                <tr id="0GOVROW"></tr>
                 <tr id="1GOVROW"></tr>
                 <tr id="2GOVROW"></tr>
                 <tr id="3GOVROW"></tr>

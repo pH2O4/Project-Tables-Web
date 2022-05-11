@@ -145,6 +145,7 @@ app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
     // Remove the timeout
     timeout: 0});
     await page.click('input[class="botao"]')
+    await page.waitForTimeout(5000);
     const GetingDatas = await page.evaluate(async () => {
 
         const TBODYBCBGOV = await document.querySelectorAll("tr")
@@ -159,7 +160,6 @@ app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
             }
            return(arrayforfluxe)
         }
-        
       await TBODYBCBGOVArray.push(getingTDS(elementsBODYBCBGOV))
       
         }
