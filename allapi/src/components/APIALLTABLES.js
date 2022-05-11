@@ -898,15 +898,15 @@ class Main extends Component {
       }
     }
     const CallFunctionsForEachOne = async () => {
-   //   await firtTableBarchart()
-    //  await SecondTableCmegroup()
-     // await ThirdTableMain()
+      await firtTableBarchart()
+      await SecondTableCmegroup()
+      await ThirdTableMain()
       await fourthTable()
     }
   //  window.setTimeout('funcao()', intervalo_em_milisegundos);
   setInterval(function() {
     window.location.reload(1);
-  }, 10000 ); // 15 minutos
+  }, 900000 ); // 15 minutos
 
   window.onload = CallFunctionsForEachOne()
     return (
