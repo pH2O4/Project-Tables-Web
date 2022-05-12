@@ -621,7 +621,7 @@ class Main extends Component {
         const element = ArrayTableB3[228];
         const table = await document.getElementById("B3TR19")
         table.insertAdjacentHTML('beforeend', `
-       <td> <b> ${element[index]} </b></td>
+       <td>  ${element[index]} </td>
         `)
       }
       for (let index = 0; index < ArrayTableB3[229].length; index++) {
@@ -901,7 +901,7 @@ class Main extends Component {
     const fivethTable = async () => {
       const response = await Axios.get('http://localhost:8080/GettingDatasUOU')
       const ArrayTableUOU = await response.data
-      console.log(ArrayTableUOU)
+      console.log(response.data)
       for (let index = 402; index <= 404; index++) {
         const element = ArrayTableUOU[index];
         const table = await document.getElementById("UOUROW1")
@@ -943,13 +943,13 @@ class Main extends Component {
        await SecondTableCmegroup()
       await ThirdTableMain()
         await fourthTable()
-       fivethTable()
+    await   fivethTable()
     }
 
     //  window.setTimeout('funcao()', intervalo_em_milisegundos);
     setInterval(function () {
       window.location.reload(1);
-    }, 900000); // 15 minutos
+    }, 60000); // 15 minutos
 
     window.onload = CallFunctionsForEachOne()
     return (
@@ -1027,7 +1027,7 @@ class Main extends Component {
               </tbody>
             </Table>
             <p><b>Fonte:</b> https://www.barchart.com/futures/quotes/CTK20/futures-prices</p>
-            <h1 id="FirtTableTitle">UOU Cotações</h1>
+            <h1 id="FirtTableTitle">UOL Cotações</h1>
 
             <Table id="UOUTable" striped bordered hover variant="dark">
               <tbody >
