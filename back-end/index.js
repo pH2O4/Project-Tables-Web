@@ -18,9 +18,11 @@ app.get("/GettingDatasBarchart", async (req, res) => {
 
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices', { waitUntil: 'load',
-    // Remove the timeout
-    timeout: 0});
+    await page.goto('https://www.barchart.com/futures/quotes/CTK20/futures-prices', {
+        waitUntil: 'load',
+        // Remove the timeout
+        timeout: 0
+    });
 
     const GetingDatas = await page.evaluate(async () => {
 
@@ -49,9 +51,11 @@ app.get("/GettingDatasB3", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
     //B3 API
-    await page.goto('https://www2.bmf.com.br/pages/portal/bmfbovespa/lumis/lum-ajustes-do-pregao-ptBR.asp', { waitUntil: 'load',
-    // Remove the timeout
-    timeout: 0});
+    await page.goto('https://www2.bmf.com.br/pages/portal/bmfbovespa/lumis/lum-ajustes-do-pregao-ptBR.asp', {
+        waitUntil: 'load',
+        // Remove the timeout
+        timeout: 0
+    });
 
 
     //  await page.mouse.click(381, 749, { button: 'right' })
@@ -91,16 +95,18 @@ app.get("/GettingDatasB3", async (req, res) => {
     })
 
     res.send(GetingDatas)
-     await browser.close()
+    await browser.close()
 
 });
 
 app.get("/GettingDatasCmegroup", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html', { waitUntil: 'load',
-    // Remove the timeout
-    timeout: 0});
+    await page.goto('https://www.cmegroup.com/markets/agriculture/oilseeds/soybean.quotes.html', {
+        waitUntil: 'load',
+        // Remove the timeout
+        timeout: 0
+    });
 
     const GetingDatas = await page.evaluate(async () => {
 
@@ -141,9 +147,11 @@ app.get("/GettingDatasCmegroup", async (req, res) => {
 app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
     const browser = await Puppeteer.launch({ headless: false });
     const page = await browser.newPage();
-    await page.goto('https://ptax.bcb.gov.br/ptax_internet/consultaBoletim.do?method=exibeFormularioConsultaBoletim', { waitUntil: ['load','domcontentloaded','networkidle0','networkidle2'],
-    // Remove the timeout
-    timeout: 0});
+    await page.goto('https://ptax.bcb.gov.br/ptax_internet/consultaBoletim.do?method=exibeFormularioConsultaBoletim', {
+        waitUntil: ['load', 'domcontentloaded', 'networkidle0', 'networkidle2'],
+        // Remove the timeout
+        timeout: 0
+    });
     await page.click('input[class="botao"]')
     await page.waitForTimeout(5000);
     const GetingDatas = await page.evaluate(async () => {
@@ -151,25 +159,68 @@ app.get("/GettingDatasGettingDatasBCBGOV", async (req, res) => {
         const TBODYBCBGOV = await document.querySelectorAll("tr")
         let TBODYBCBGOVArray = []
         for (let indexBODY = 0; indexBODY < TBODYBCBGOV.length; indexBODY++) {
-       const elementsBODYBCBGOV = TBODYBCBGOV[indexBODY].querySelectorAll("td")
-        const getingTDS = (elementsBODYBCBGOV) => {
-            let arrayforfluxe = []
-            for (let index = 0; index < elementsBODYBCBGOV.length; index++) {
-                const element = elementsBODYBCBGOV[index].textContent
-                arrayforfluxe.push(element)
+            const elementsBODYBCBGOV = TBODYBCBGOV[indexBODY].querySelectorAll("td")
+            const getingTDS = (elementsBODYBCBGOV) => {
+                let arrayforfluxe = []
+                for (let index = 0; index < elementsBODYBCBGOV.length; index++) {
+                    const element = elementsBODYBCBGOV[index].textContent
+                    arrayforfluxe.push(element)
+                }
+                return (arrayforfluxe)
             }
-           return(arrayforfluxe)
-        }
-      await TBODYBCBGOVArray.push(getingTDS(elementsBODYBCBGOV))
-      
+            await TBODYBCBGOVArray.push(getingTDS(elementsBODYBCBGOV))
+
         }
         const JsonTBODYBCBGOVArray = await JSON.stringify(TBODYBCBGOVArray)
 
         return (JsonTBODYBCBGOVArray)
 
     })
-   await res.send(GetingDatas)
+    await res.send(GetingDatas)
     await browser.close()
+});
+
+app.get("/GettingDatasUOU", async (req, res) => {
+
+
+    const browser = await Puppeteer.launch({ headless: false });
+    const page = await browser.newPage();
+    await page.goto('https://economia.uol.com.br/cotacoes/', {
+        waitUntil: 'load',
+        // Remove the timeout
+        timeout: 0
+    });
+
+    const GetingDatas = await page.evaluate(async () => {
+
+        const TBODYUOU = await document.querySelectorAll("tr")
+        const GtingATAG = await document.querySelectorAll("a")
+        let TBODYUOUArray = []
+        for (let index = 0; index < GtingATAG.length; index++) {
+            const GetingATAG = GtingATAG[index].textContent
+            TBODYUOUArray.push(GetingATAG)
+        }
+    /*    for (let indexBODY = 0; indexBODY < TBODYUOU.length; indexBODY++) {
+            const TBODYUOUTD = await TBODYUOU[indexBODY].querySelectorAll("td")
+            const getingTDS = (TBODYUOUTD) => {
+                 let arrayFluxUOU = []
+                for (let index = 0; index < TBODYUOUTD.length; index++) {
+                    const GettingTDSUOU = TBODYUOU[index].textContent
+                    arrayFluxUOU.push(GettingTDSUOU)
+                }
+                return (arrayFluxUOU)
+            }
+            TBODYUOUArray.push(getingTDS(TBODYUOUTD))
+            console.log(TBODYUOUArray)
+        }*/
+        const JsonTBODYUOUArray = JSON.stringify(TBODYUOUArray)
+        return (JsonTBODYUOUArray)
+
+    })
+
+    res.send(GetingDatas)
+    await browser.close()
+
 });
 
 const PORT = 8080;
