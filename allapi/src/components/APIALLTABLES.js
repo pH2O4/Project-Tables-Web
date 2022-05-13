@@ -949,7 +949,7 @@ class Main extends Component {
     //  window.setTimeout('funcao()', intervalo_em_milisegundos);
     setInterval(function () {
       window.location.reload(1);
-    }, 60000); // 15 minutos
+    }, 900000); // 15 minutos
 
     window.onload = CallFunctionsForEachOne()
     return (
